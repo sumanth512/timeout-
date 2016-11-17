@@ -1,0 +1,190 @@
+<html ng-app="myApp">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-cookie/4.1.0/angular-cookie.js"></script>
+
+    <script src="app.js"></script>
+    <!--<script src="service/myService.js"></script>-->
+    <script src="controllers/myController.js"></script>
+
+
+    <title>task</title>
+    <style>
+        .fade{
+
+            background-color: red;
+            padding: 50px;
+            display: block;
+        }
+        .x {
+width: 10px;
+          background-color: red;
+            padding: 50px;
+            display: block;
+            position: relative;
+
+        }
+        #abc{
+
+
+            display: block;
+
+
+        }
+        #def{
+            height: 1000px;
+            background-color: coral;
+            width: 1000px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+<fade-in class="fade" duration="1000" bg="black"></fade-in>
+<!--<div class="container">-->
+    <!--<zoom wid="500" id="abc" ht="500" duration="100"></zoom></div>-->
+<!--<div class="container">-->
+    <!--<zoom-out id="def"></zoom-out>-->
+<!--<slide class="x" duration="150" > </slide>-->
+<!--<br/><br/>-->
+<!--<slide class="x" duration="1000"></slide>-->
+<div ng-controller="cks">
+    {{set}}
+    <input type="text" ng-model="sumanth">
+    <button ng-click="hit()">set cookie</button>
+</div>
+<nav class="navbar navbar-inverse">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse-4">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Caratred team</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-4">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="collapse nav navbar-nav nav-collapse" role="search" id="nav-collapse4">
+                    <li><a href="#">Support</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-expanded="false"><img class="img-circle"
+
+                                                      alt="maridlcrmn" width="20"/> Maridlcrmn <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">My profile</a></li>
+                            <li><a href="#">Favorited</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row content" ng-controller="menu">
+        <div class="col-sm-3 sidenav">
+            <h4>menus</h4>
+            <ul class="nav nav-pills nav-stacked" ng-repeat="x in menus">
+                <li>{{x.item}}</li>
+
+            </ul>
+        </div>
+
+
+        <div class="container-fluid col-sm-9" ng-controller="table">
+
+            <table class="table">
+
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th> Email</th>
+                    <th>image</th>
+                </tr>
+
+                <tr ng-repeat="x in students">
+                    <td>{{x.fname}}</td>
+                    <td>{{x.lname}}</td>
+                    <td>{{x.email}}</td>
+                    <td>{{x.image}}</td>
+                </tr>
+
+
+            </table>
+<table class="table">
+<tr >
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Email</th>
+<th>image</th>
+</tr>
+<tr ng-repeat="x in sumanth">
+<td>{{x.fname}}</td>
+<td>{{x.lname}}</td>
+<td>{{x.email}}</td>
+<td></td>
+</tr>
+</table>
+
+          <user></user>
+            </br>
+            <user></user>
+            </br>
+            <user></user>
+            </br>
+            <user></user>
+
+            <user sumanth="sumanth"></user></br>
+            <user sumanth="dileep"></user></br>
+            <user sumanth="shankar"></user></br>
+            <user sumanth="madhu"></user>
+
+            <div ng-controller="button">
+                <button ng-click="button()">Add button</button>
+                <div ng-repeat="button in buttons">
+
+                    <button>{{button.text}}
+
+                    </button>
+                    <button ng-click="removeButton(button)">x</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>
